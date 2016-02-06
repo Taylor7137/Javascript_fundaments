@@ -76,9 +76,13 @@
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password">
+                    <input type="text" class="form-control" id="password" placeholder="Password">
                 </div>
-                <button class="btn btn-primary">Submit</button>
+					 <div class='form-group'>
+						  <label for='thinker'>Thinker</label>
+						  <input type="text" class="form-control" id='thinker' placeholder="Thinker">
+					 </div>
+                <button type='button' id= 'thisone' class="btn btn-primary">Submit</button>
             </form>
 
         </div>
@@ -90,7 +94,10 @@
             <p id="email-output"></p>
             <br>
             <h4 id = "password-label">Password:</h4>
-            
+            <p id='password-output'></p>
+			   <br>
+			   <h4 id='thinker-heading'>Thinker:</h4>
+			   <p id='thinker-out'></p>
         </div>
         <!-- /#second -->
     </div>
@@ -103,26 +110,60 @@
     <script src="js/bootstrap.min.js"></script>
     <script>
         //Lets change some content and a little styles
-
+     
         //Let's get ahold of all of these elements
-
+		 
+        var email = document.getElementById('email');
+		  var password = document.getElementById('password');
+		  var button = document.querySelector('#thisone');
+		  var emailout = document.querySelector('#email-output');
+		  var passwordout = document.getElementById('password-output');
+		 
+		  var tinktink= document.getElementById('thinker');
+		  var tinktinkout = document.getElementById('thinker-out');
+		 
         //Let's write a handling function for the button click
-            //use the elements from the form and get their values
-            //apply that value as the innerText for the output respective output portions
-            //add a little styling
+		 
+		 button.addEventListener("click", clickbutton);
+		 
+		  function clickbutton (){
+			  //use the elements from the form and get their values
+			  var emailVal = email.value;
+			  var passwordVal = password.value;		
+			  
+			  var tinktinkVal=tinktink.value;
+           //apply that value as the innerText for the respective output portions
+			  
+			  emailout.innerText = emailVal;
+			  passwordout.innerText = passwordVal;
+			  
+			  tinktinkout.innerText = tinktinkVal;
+           //add a little styling
+			  emailout.style.backgroundColor = 'chartreuse';
+			  passwordout.style.backgroundColor = 'bisque';
+			  tinktinkout.style.color = 'red';
+			  tinktinkout.style.backgroundColor = 'black';
+			  
+			 
+			  console.log('good');
+			  
+		  }
+           
         //Let's attach an eventListener to the button for the click event
 
-/*
-        Assignment:
-            - Add another form input of your choice... Maybe age or name?
-            - Get a reference to the DOM element and assign that a variable
-            - Add code to the click handler so that you achieve the following:
-                    - You update a value in the output section of your page
-                    - You alter the styles of the output for your field with the following
-                        --> Your font color is red
-                        --> Your element has a black background color
-                        --> The element is added using JavaScript to your page under the already present output portions.
-*/
+//
+//        Assignment:
+//            - Add another form input of your choice... Maybe age or name?
+//            - Get a reference to the DOM element and assign that a variable
+             
+//            - Add code to the click handler so that you achieve the following:
+		      
+//                    - You update a value in the output section of your page
+//                    - You alter the styles of the output for your field with the following
+//                        --> Your font color is red
+//                        --> Your element has a black background color
+//                        --> The element is added using JavaScript to your page under the already present output portions.
+
     </script>
 </body>
 
