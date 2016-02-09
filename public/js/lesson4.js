@@ -41,8 +41,9 @@
 		 var focus = document.getElementById('name-input');
 		 focus.addEventListener('click', focuss);
 		 
-		 function focuss(){
+		 function focuss(e){
 			 alert('Focus clicker');
+			 console.log(e);
 		 }
 ///
     
